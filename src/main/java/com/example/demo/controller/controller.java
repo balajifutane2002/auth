@@ -3,6 +3,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entitiy.StudentTable;
@@ -16,7 +17,7 @@ public class controller {
 	studentServices r;
 	
 	@PostMapping("/add")
-	String login(StudentTable s) {
+	String login(@RequestBody StudentTable s) {
 		
 		
 		return r.addstudent(s);
