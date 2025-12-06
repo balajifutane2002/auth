@@ -1,22 +1,33 @@
 package com.example.demo.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.entitiy.StudentTable;
+import com.example.demo.services.studentServices;
 
 @RestController
 public class controller {
 	
 	
+	@Autowired
+	studentServices r;
 	
-	@GetMapping("/login")
-	String login() {
+	@PostMapping("/add")
+	String login(StudentTable s) {
 		
 		
-		return "Login SUcessfullyyyyyyyyyyyyyyyyyyyyy";
+		return r.addstudent(s);
+		
+		
+		
 	}
 	
 
 }
+
 
 //spring.application.name=AuthicationApi-1
 //server.port=${PORT:8080}  
@@ -31,3 +42,8 @@ public class controller {
 //
 //spring.jpa.hibernate.ddl-auto=update
 //spring.jpa.show-sql=true
+
+
+
+
+
